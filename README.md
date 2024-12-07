@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Tetris Rain App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://github.com/user-attachments/assets/e41dcfc6-bdb4-49d5-b9d9-0c5be5e64348)
 
-## Available Scripts
 
-In the project directory, you can run:
+A fun and interactive Tetris Rain app, inspired by the iconic Tetris game, where falling blocks form patterns as they cascade down the screen. The app showcases a unique twist on the classic gameplay mechanics with a visually appealing design and engaging user interaction.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Dynamic Tetris Blocks**: Falling blocks that simulate the classic Tetris experience.
+- **Customizable Speed**: Adjust the falling speed of the blocks for different difficulty levels.
+- **Interactive UI**: Click or tap to rotate and move blocks left or right.
+- **Responsive Design**: The app adapts to various screen sizes for a seamless experience across devices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **Frontend**: HTML, CSS, JavaScript
+- **Libraries/Frameworks**: React (if applicable), Tailwind CSS (for styling), Webpack (for bundling)
+- **Game Logic**: JavaScript (handling the block falling and user interactions)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Approach
 
-### `npm run build`
+### 1. **Game Engine Setup**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The core logic of the Tetris Rain app is based on simulating falling blocks. I created a simple grid system to track block positions and checked for collisions with other blocks or the boundaries of the screen. The game state (such as active blocks and game over conditions) is dynamically updated in the app’s state.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. **Block Movement and Rotation**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The blocks fall at a predefined speed but can be controlled by the user. Using simple key press events, users can rotate the blocks or move them horizontally. The rotation logic is based on a 2D array transformation.
 
-### `npm run eject`
+### 3. **Randomized Block Generation**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Each block is randomly selected from a set of predefined shapes (tetrominoes), and the blocks fall one after the other. I used JavaScript’s `Math.random()` to generate random shapes and positions for each block.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 4. **Collision Detection**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The game ensures that blocks stop falling when they hit the bottom or collide with other blocks. For this, I used basic bounding box collision detection to determine if the block's current position is valid.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 5. **Scoring and Game Over Logic**
 
-## Learn More
+The app tracks completed lines, awarding points as lines are filled. Once a line is full, it is cleared, and all blocks above it fall one row down. The game ends when new blocks can no longer fit at the top of the grid.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 6. **Visual Design**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The falling blocks are styled to resemble traditional Tetris shapes. The app uses CSS animations to smoothly animate the blocks as they fall. Tailwind CSS helps with responsiveness and the overall design of the interface.
 
-### Code Splitting
+## How to Play
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **Start the game**: Open the app to begin the Tetris Rain experience.
+2. **Move and Rotate**: Use arrow keys to move the blocks left, right, or rotate.
+3. **Objective**: Clear as many lines as possible before the blocks stack up to the top.
 
-### Analyzing the Bundle Size
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/tetris-rain.git
